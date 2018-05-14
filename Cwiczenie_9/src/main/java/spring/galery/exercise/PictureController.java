@@ -35,7 +35,6 @@ public class PictureController {
             ClassPathResource imgFile= new ClassPathResource("image");
             File directory =imgFile.getFile();
             File[] files = directory.listFiles();
-            // int i =Integer.getInteger(index);
             index-=1;
             ClassPathResource img= new ClassPathResource("image/" +files[index].getName());
             response.setContentType(MediaType.IMAGE_JPEG_VALUE);

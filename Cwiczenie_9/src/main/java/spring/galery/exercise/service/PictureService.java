@@ -1,5 +1,7 @@
 package spring.galery.exercise.service;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import spring.galery.exercise.data.Picture;
@@ -15,10 +17,8 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
 import java.util.List;
-
 @Service
 public class PictureService {
-
     private List<Picture> gallery=null;
 
     public List<Picture> getAllPictures(){
@@ -33,7 +33,7 @@ public class PictureService {
         int width = 963;
         int height = 640;
         int index=0;
-        BufferedImage bf =null ;// new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
+        BufferedImage bf =null;
         gallery= new ArrayList<Picture>();
         BasicFileAttributes attr=null;
         for(File f : contents)
