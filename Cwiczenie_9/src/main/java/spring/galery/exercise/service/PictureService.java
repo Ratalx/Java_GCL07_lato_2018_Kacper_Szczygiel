@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import spring.galery.exercise.data.Picture;
 
 import javax.imageio.ImageIO;
+import javax.servlet.ServletInputStream;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -21,14 +22,12 @@ import java.util.List;
 public class PictureService {
     private List<Picture> gallery=null;
 
+    private String path="E:\\Java_Projects\\Student Projects\\Java_GCL07_lato_2018_Kacper_Szczygiel\\Cwiczenie_9\\src\\main\\resources\\image";
+
     public List<Picture> getAllPictures(){
-        ClassPathResource imgFile = new ClassPathResource("image");
-        File directory = null;
-        try {
-            directory = imgFile.getFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+
+        File directory = new File(path);
         File[] contents= directory.listFiles();
         int width = 963;
         int height = 640;
@@ -56,5 +55,11 @@ public class PictureService {
             }
         }
         return gallery;
+    }
+    public String setImage(ServletInputStream inputStream) throws IOException{
+            BufferedImage newImage;
+            newImage= ImageIO.read(inputStream);
+
+        return "cos";
     }
 }

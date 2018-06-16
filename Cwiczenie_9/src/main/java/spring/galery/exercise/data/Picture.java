@@ -1,5 +1,7 @@
 package spring.galery.exercise.data;
 
+import java.util.HashMap;
+
 public class Picture {
 
     public Picture(){
@@ -13,8 +15,6 @@ public class Picture {
         this.resolution=resolution;
         this.created=created;
         this.size=size;
-
-
 
     }
 
